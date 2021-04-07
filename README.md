@@ -74,14 +74,14 @@ export default App
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOWPayments API - HTML Example</title>
-  <script src="../../dist/nowpayments-api-js.min.js"></script>
+  <script src="https://unpkg.com/@nowpaymentsio/nowpayments-api-js/dist/nowpayments-api-js.min.js"></script>
 </head>
 
 <body>
   <h4>Available currencies</h4>
   <script>
     const body = document.body;
-    const api = new NOWPaymentsApi({ apiKey: 'A7M40XV-CG1448Z-KVVED3G-NW3V0TK' }) // your api key
+    const api = new NOWPaymentsApiJS({ apiKey: 'A7M40XV-CG1448Z-KVVED3G-NW3V0TK' }) // your api key
 
     async function fetchCurrencies() {
       const { currencies } = await api.getCurrencies()
