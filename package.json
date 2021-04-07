@@ -1,16 +1,16 @@
 {
-  "name": "@nowpayments/nowpayments-api",
+  "name": "@nowpaymentsio/nowpayments-api-js",
   "version": "1.0.0",
   "description": "A library for interacting with the NOWPayments API",
   "author": "bogdanaks <bogdan@nowpayments.io> (https://github.com/bogdanaks)",
-  "main": "./dist/nowpayments-api.js",
+  "main": "./dist/nowpayments-api-js.js",
   "types": "./src/index.d.ts",
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bogdanaks/nowpayments-api.git"
+    "url": "https://github.com/NowPaymentsIO/nowpayments-api-js.git"
   },
-  "bugs": "https://github.com/bogdanaks/nowpayments-api/issues",
+  "bugs": "https://github.com/NowPaymentsIO/nowpayments-api-js/issues",
   "private": false,
   "scripts": {
     "build": "NODE_ENV=production grunt build",
