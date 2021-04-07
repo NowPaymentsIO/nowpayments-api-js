@@ -101,3 +101,80 @@ export default App
 </body>
 </html>
 ```
+## Methods
+&nbsp;
+#### NPApi.status()
+Get API status
+**params**       | **default** | **required** | **description**                                        
+------------------|-------------|--------------|--------------------------------------------------------                                   
+&nbsp; | &nbsp;       | &nbsp;           | &nbsp;
+
+#### NPApi.getCurrencies()
+Get available currencies
+**params**       | **default** | **required** | **description**                                        
+------------------|-------------|--------------|--------------------------------------------------------                                   
+&nbsp; | &nbsp;       | &nbsp;           | &nbsp;
+
+#### NPApi.getEstimatePrice(params)
+Get estimated price
+**params**       | **default** | **required** | **description**                                        
+------------------|-------------|--------------|--------------------------------------------------------                                   
+amount | false | true | Initial cost in the fiat currency
+
+#### NPApi.createPayment(params)
+Create payment
+**params**       | **default** | **required** | **description**                                        
+------------------|-------------|--------------|--------------------------------------------------------                                   
+price_amount | false | true | Fiat equivalent of the price to be paid in crypto
+price_currency | false | true | Fiat currency in which the price_amount is specified (usd, eur, etc)
+pay_amount | false | false | Amount that users have to pay for the order stated in crypto
+pay_currency | false | true | Crypto currency in which the pay_amount is specified (btc, eth, etc)
+ipn_callback_url | false | false | Url to receive callbacks, should contain "http" or "https", eg. "https://nowpayments.io"
+order_id | false | false | Inner store order ID, e.g. "RGDBP-21314"
+order_description | false | true | Inner store order description, e.g. "Apple Macbook Pro 2019 x 1"
+purchase_id | false | true | Id of purchase for which you want to create aother
+payout_address | false | false | Usually the funds will go to the address you specify in your Personal account. In case you want to receive funds on another address, you can specify it in this parameter
+payout_currency | false | false | Currency of your external payout_address, required when payout_adress is specified
+payout_extra_id | false | false | Extra id or memo or tag for external payout_address
+fixed_rate | false | false | Boolean, can be true or false. Required for fixed-rate exchanges
+
+#### NPApi.getPaymentStatus(params)
+Get payment status
+**params**       | **default** | **required** | **description**                                        
+------------------|-------------|--------------|--------------------------------------------------------                                   
+payment_id | false | true | ID of the payment
+
+#### NPApi.getMinimumPaymentAmount(params)
+Get the minimum payment amount
+**params**       | **default** | **required** | **description**                                        
+------------------|-------------|--------------|--------------------------------------------------------                                   
+currency_from | false | true | Ticker currency
+currency_to | false | true | Ticker currency
+
+#### NPApi.getListPayments(params)
+Get list of payments
+**params**       | **default** | **required** | **description**                                        
+------------------|-------------|--------------|--------------------------------------------------------                                   
+limit | 10 | false | Number of records in one page
+page | 0 | false | Page number you want to get
+sortBy | created_at | false | Sort the received list by a paramenter.
+orderBy | asc | false | Display the list in ascending or descending order
+dateFrom | null | false | Select the displayed period start date (date format: YYYY-MM-DD or yy-MM-ddTHH:mm:ss.SSSZ)
+dateTo | null | false | Select the displayed period end date (date format: YYYY-MM-DD or yy-MM-ddTHH:mm:ss.SSSZ)
+
+#### NPApi.createInvoice(params)
+Create invoice
+**params**       | **default** | **required** | **description**                                        
+------------------|-------------|--------------|--------------------------------------------------------                                   
+price_amount | false | true | He amount that users have to pay for the order stated in fiat currency. In case you do not indicate the price in crypto, our system will automatically convert this fiat amount in crypto equivalent
+price_currency | false | true | The fiat currency in which the price_amount is specified (usd, eur, etc)
+pay_currency | null | false | The crypto currency in which the pay_amount is specified (btc, eth, etc).If not specified, can be choosen on the invoice_url
+ipn_callback_url | null | false | Url to receive callbacks, should contain "http" or "https", eg. "https://nowpayments.io"
+order_id | null | false | Inner store order ID, e.g. "RGDBP-21314"
+order_description | null | false | Inner store order description, e.g. "Apple Macbook Pro 2019 x 1"
+success_url | null | false | Url where the customer will be redirected after sucesfull payment
+cancel_url | null | false | Url where the customer will be redirected after failed payment
+
+## Resources
+
+* [Documentation API](https://documenter.getpostman.com/view/7907941/S1a32n38)
