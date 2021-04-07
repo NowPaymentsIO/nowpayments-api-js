@@ -23,7 +23,7 @@ export interface IGetPaymentStatus {
   payment_id: string
 }
 
-export interface IGetMinimumPaymentStatus {
+export interface IGetMinimumPaymentAmount {
   currency_from: string
   currency_to: string
 }

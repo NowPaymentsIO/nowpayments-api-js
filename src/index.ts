@@ -4,7 +4,7 @@ import {
   ICreatePayment,
   IGetEstimatePrice,
   IGetPaymentStatus,
-  IGetMinimumPaymentStatus,
+  IGetMinimumPaymentAmount,
   IGetListPayments,
   ICreateInvoice
 } from './types'
@@ -63,8 +63,8 @@ class NOWPaymentsApi {
     return await NP.getPaymentStatus({ apiKey: this.apiKey, payment_id })
   }
 
-  async getMinimumPaymentStatus({ currency_from, currency_to }: IGetMinimumPaymentStatus) {
-    return await NP.getMinimumPaymentStatus({ apiKey: this.apiKey, currency_from, currency_to })
+  async getMinimumPaymentAmount({ currency_from, currency_to }: IGetMinimumPaymentAmount) {
+    return await NP.getMinimumPaymentAmount({ apiKey: this.apiKey, currency_from, currency_to })
   }
 
   async getListPayments({ limit, page, sortBy, orderBy, dateFrom, dateTo }: IGetListPayments = {}) {
@@ -96,5 +96,3 @@ class NOWPaymentsApi {
 }
 
 export = NOWPaymentsApi
-// export default NOWPaymentsApi
-// module.exports = NOWPaymentsApi
