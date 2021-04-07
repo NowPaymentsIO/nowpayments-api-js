@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>HTML Example</title>
+  <script src="../../dist/nowpayments-api.js"></script>
+</head>
+
+<body>
+  <h2>Html Examples</h2>
+  <h4>Available currencies</h4>
+  <div id="loading" class="loading-dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+  <script>
+    const myParent = document.body;
+    const api = new NOWPaymentsApi({ apiKey: 'A7M40XV-CG1448Z-KVVED3G-NW3V0TK' })
+
+    async function main() {
+      const { currencies } = await api.getCurrencies()
+
+      if (currencies.length) {
+        const selectList = document.createElement("select")
+        selectList.id = "mySelect"
+        myParent.appendChild(selectList)
+
+        for (var i = 0; i < currencies.length; i++) {
+          const option = document.createElement("option")
+          option.value = currencies[i]
+          option.text = currencies[i]
+          selectList.appendChild(option)
+        }
+
+        const loading = document.querySelector('#loading')
+        loading.remove()
+      }
+    }
+
+    main()
+  </script>
+</body>
+
+</html>
