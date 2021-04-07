@@ -10,7 +10,7 @@ function generateConfig(name) {
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: name + '.js',
-      library: 'NOWPaymentsApi',
+      library: 'NOWPaymentsApiJS',
       libraryTarget: 'umd',
       globalObject: 'this',
       umdNamedDefine: true
@@ -33,7 +33,7 @@ function generateConfig(name) {
   return config
 }
 
-['nowpayments-api', 'nowpayments-api.min'].forEach(function (key) {
+['nowpayments-api-js', 'nowpayments-api-js.min'].forEach(function (key) {
   config[key] = generateConfig(key)
 })
 
