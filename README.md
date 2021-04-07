@@ -9,7 +9,7 @@ A library for interacting with the NOWPayments API.
 Using npm:
 
 ```bash
-$ npm install axios
+$ npm install @nowpaymentsio/nowpayments-api-js
 ```
 
 Using unpkg CDN:
