@@ -64,7 +64,7 @@ const App = () => {
 
 export default App
 ```
-
+### HTML
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -119,37 +119,37 @@ Get available currencies
 Get estimated price
 **params**       | **default** | **required** | **description**                                        
 ------------------|-------------|--------------|--------------------------------------------------------                                   
-amount | false | true | Initial cost in the fiat currency
+amount | null | true | Initial cost in the fiat currency
 
 #### NPApi.createPayment(params)
 Create payment
 **params**       | **default** | **required** | **description**                                        
 ------------------|-------------|--------------|--------------------------------------------------------                                   
-price_amount | false | true | Fiat equivalent of the price to be paid in crypto
-price_currency | false | true | Fiat currency in which the price_amount is specified (usd, eur, etc)
-pay_amount | false | false | Amount that users have to pay for the order stated in crypto
-pay_currency | false | true | Crypto currency in which the pay_amount is specified (btc, eth, etc)
-ipn_callback_url | false | false | Url to receive callbacks, should contain "http" or "https", eg. "https://nowpayments.io"
-order_id | false | false | Inner store order ID, e.g. "RGDBP-21314"
-order_description | false | true | Inner store order description, e.g. "Apple Macbook Pro 2019 x 1"
-purchase_id | false | true | Id of purchase for which you want to create aother
-payout_address | false | false | Usually the funds will go to the address you specify in your Personal account. In case you want to receive funds on another address, you can specify it in this parameter
-payout_currency | false | false | Currency of your external payout_address, required when payout_adress is specified
-payout_extra_id | false | false | Extra id or memo or tag for external payout_address
-fixed_rate | false | false | Boolean, can be true or false. Required for fixed-rate exchanges
+price_amount | null | true | Fiat equivalent of the price to be paid in crypto
+price_currency | null | true | Fiat currency in which the price_amount is specified (usd, eur, etc)
+pay_amount | null | false | Amount that users have to pay for the order stated in crypto
+pay_currency | null | true | Crypto currency in which the pay_amount is specified (btc, eth, etc)
+ipn_callback_url | null | false | Url to receive callbacks, should contain "http" or "https", eg. "https://nowpayments.io"
+order_id | null | false | Inner store order ID, e.g. "RGDBP-21314"
+order_description | null | false | Inner store order description, e.g. "Apple Macbook Pro 2019 x 1"
+purchase_id | null | false | Id of purchase for which you want to create aother
+payout_address | null | false | Usually the funds will go to the address you specify in your Personal account. In case you want to receive funds on another address, you can specify it in this parameter
+payout_currency | null | false | Currency of your external payout_address, required when payout_adress is specified
+payout_extra_id | null | false | Extra id or memo or tag for external payout_address
+fixed_rate | null | false | Boolean, can be true or false. Required for fixed-rate exchanges
 
 #### NPApi.getPaymentStatus(params)
 Get payment status
 **params**       | **default** | **required** | **description**                                        
 ------------------|-------------|--------------|--------------------------------------------------------                                   
-payment_id | false | true | ID of the payment
+payment_id | null | true | ID of the payment
 
 #### NPApi.getMinimumPaymentAmount(params)
 Get the minimum payment amount
 **params**       | **default** | **required** | **description**                                        
 ------------------|-------------|--------------|--------------------------------------------------------                                   
-currency_from | false | true | Ticker currency
-currency_to | false | true | Ticker currency
+currency_from | null | true | Ticker currency
+currency_to | null | true | Ticker currency
 
 #### NPApi.getListPayments(params)
 Get list of payments
@@ -166,8 +166,8 @@ dateTo | null | false | Select the displayed period end date (date format: YYYY-
 Create invoice
 **params**       | **default** | **required** | **description**                                        
 ------------------|-------------|--------------|--------------------------------------------------------                                   
-price_amount | false | true | He amount that users have to pay for the order stated in fiat currency. In case you do not indicate the price in crypto, our system will automatically convert this fiat amount in crypto equivalent
-price_currency | false | true | The fiat currency in which the price_amount is specified (usd, eur, etc)
+price_amount | null | true | He amount that users have to pay for the order stated in fiat currency. In case you do not indicate the price in crypto, our system will automatically convert this fiat amount in crypto equivalent
+price_currency | null | true | The fiat currency in which the price_amount is specified (usd, eur, etc)
 pay_currency | null | false | The crypto currency in which the pay_amount is specified (btc, eth, etc).If not specified, can be choosen on the invoice_url
 ipn_callback_url | null | false | Url to receive callbacks, should contain "http" or "https", eg. "https://nowpayments.io"
 order_id | null | false | Inner store order ID, e.g. "RGDBP-21314"
