@@ -1,11 +1,11 @@
-import { IGetMinimumPaymentStatus, Error } from '../../types';
-export interface GetMinimumPaymentStatusReturn {
+import { IGetMinimumPaymentAmount, Error } from '../../types';
+export interface GetMinimumPaymentAmountReturn {
     currency_from: string;
     currency_to: string;
     min_amount: number;
 }
-export interface GetMinimumPaymentStatus extends IGetMinimumPaymentStatus {
+export interface GetMinimumPaymentAmount extends IGetMinimumPaymentAmount {
     apiKey: string;
 }
-declare const getMinimumPaymentStatus: ({ apiKey, currency_from, currency_to }: GetMinimumPaymentStatus) => Promise<GetMinimumPaymentStatusReturn | Error>;
-export default getMinimumPaymentStatus;
+declare const getMinimumPaymentAmount: ({ apiKey, currency_from, currency_to }: GetMinimumPaymentAmount) => Promise<GetMinimumPaymentAmountReturn | Error>;
+export default getMinimumPaymentAmount;
