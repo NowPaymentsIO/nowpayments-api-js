@@ -1,4 +1,4 @@
-const NOWPaymentsApi = require('@nowpayments/nowpayments-api')
+const NOWPaymentsApi = require('@nowpayments/nowpayments-api-js')
 
 const NPApi = new NOWPaymentsApi({ apiKey: 'A7M40XV-CG1448Z-KVVED3G-NW3V0TK' })
 

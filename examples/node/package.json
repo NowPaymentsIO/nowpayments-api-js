@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node index.js"
   },
+  "dependencies": {
+    "@nowpaymentsio/nowpayments-api-js": "1.0.4"
+  },
   "author": "",
   "license": "ISC"
 }
