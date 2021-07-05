@@ -33,6 +33,10 @@ async function logCurrencies() {
 logCurrencies()
 ```
 
+#### Sandbox usage
+
+Use the environment variable `SANDBOX=true`
+
 ### React
 
 ```js
@@ -105,26 +109,26 @@ export default App
 &nbsp;
 #### NPApi.status()
 Get API status
-**params**       | **default** | **required** | **description**                                        
-------------------|-------------|--------------|--------------------------------------------------------                                   
+**params**       | **default** | **required** | **description**
+------------------|-------------|--------------|--------------------------------------------------------
 &nbsp; | &nbsp;       | &nbsp;           | &nbsp;
 
 #### NPApi.getCurrencies()
 Get available currencies
-**params**       | **default** | **required** | **description**                                        
-------------------|-------------|--------------|--------------------------------------------------------                                   
+**params**       | **default** | **required** | **description**
+------------------|-------------|--------------|--------------------------------------------------------
 &nbsp; | &nbsp;       | &nbsp;           | &nbsp;
 
 #### NPApi.getEstimatePrice(params)
 Get estimated price
-**params**       | **default** | **required** | **description**                                        
-------------------|-------------|--------------|--------------------------------------------------------                                   
+**params**       | **default** | **required** | **description**
+------------------|-------------|--------------|--------------------------------------------------------
 amount | null | true | Initial cost in the fiat currency
 
 #### NPApi.createPayment(params)
 Create payment
-**params**       | **default** | **required** | **description**                                        
-------------------|-------------|--------------|--------------------------------------------------------                                   
+**params**       | **default** | **required** | **description**
+------------------|-------------|--------------|--------------------------------------------------------
 price_amount | null | true | Fiat equivalent of the price to be paid in crypto
 price_currency | null | true | Fiat currency in which the price_amount is specified (usd, eur, etc)
 pay_amount | null | false | Amount that users have to pay for the order stated in crypto
@@ -140,21 +144,21 @@ fixed_rate | null | false | Boolean, can be true or false. Required for fixed-ra
 
 #### NPApi.getPaymentStatus(params)
 Get payment status
-**params**       | **default** | **required** | **description**                                        
-------------------|-------------|--------------|--------------------------------------------------------                                   
+**params**       | **default** | **required** | **description**
+------------------|-------------|--------------|--------------------------------------------------------
 payment_id | null | true | ID of the payment
 
 #### NPApi.getMinimumPaymentAmount(params)
 Get the minimum payment amount
-**params**       | **default** | **required** | **description**                                        
-------------------|-------------|--------------|--------------------------------------------------------                                   
+**params**       | **default** | **required** | **description**
+------------------|-------------|--------------|--------------------------------------------------------
 currency_from | null | true | Ticker currency
 currency_to | null | true | Ticker currency
 
 #### NPApi.getListPayments(params)
 Get list of payments
-**params**       | **default** | **required** | **description**                                        
-------------------|-------------|--------------|--------------------------------------------------------                                   
+**params**       | **default** | **required** | **description**
+------------------|-------------|--------------|--------------------------------------------------------
 limit | 10 | false | Number of records in one page
 page | 0 | false | Page number you want to get
 sortBy | created_at | false | Sort the received list by a paramenter.
@@ -164,8 +168,8 @@ dateTo | null | false | Select the displayed period end date (date format: YYYY-
 
 #### NPApi.createInvoice(params)
 Create invoice
-**params**       | **default** | **required** | **description**                                        
-------------------|-------------|--------------|--------------------------------------------------------                                   
+**params**       | **default** | **required** | **description**
+------------------|-------------|--------------|--------------------------------------------------------
 price_amount | null | true | He amount that users have to pay for the order stated in fiat currency. In case you do not indicate the price in crypto, our system will automatically convert this fiat amount in crypto equivalent
 price_currency | null | true | The fiat currency in which the price_amount is specified (usd, eur, etc)
 pay_currency | null | false | The crypto currency in which the pay_amount is specified (btc, eth, etc).If not specified, can be choosen on the invoice_url
