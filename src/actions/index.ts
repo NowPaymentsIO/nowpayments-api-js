@@ -1,6 +1,7 @@
 import status from './status'
 import getCurrencies from './get-currencies'
 import getFullCurrencies from './get-full-currencies'
+import getAvailableCurrencies from './get-available-currencies'
 import getEstimatePrice from './get-estimate-price'
 import createPayment from './create-payment'
 import getPaymentStatus from './get-payment-status'
@@ -12,6 +13,7 @@ export default {
   status,
   getCurrencies,
   getFullCurrencies,
+  getAvailableCurrencies,
   getEstimatePrice,
   createPayment,
   getPaymentStatus,
