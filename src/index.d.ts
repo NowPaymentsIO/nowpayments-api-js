@@ -6,6 +6,8 @@ declare class NOWPaymentsApi {
     });
     status(): Promise<import("./actions/status").StatusReturn | import("./types").Error>;
     getCurrencies(): Promise<import("./types").Error | import("./actions/get-currencies").GetCurrenciesReturn>;
+    getFullCurrencies(): Promise<import("./types").Error | import("./actions/get-full-currencies").GetFullCurrenciesReturn>;
+    getAvailableCurrencies(): Promise<import("./types").Error | import("./actions/get-available-currencies").GetAvailableCurrenciesReturn>;
     getEstimatePrice({ amount, currency_from, currency_to }: IGetEstimatePrice): Promise<import("./types").Error | import("./actions/get-estimate-price").GetEstimatePriceReturn>;
     createPayment({ price_amount, price_currency, pay_amount, pay_currency, ipn_callback_url, order_id, order_description, purchase_id, payout_address, payout_currency, payout_extra_id, fixed_rate }: ICreatePayment): Promise<import("./types").Error | import("./actions/create-payment").CreatePaymentReturn>;
     getPaymentStatus({ payment_id }: IGetPaymentStatus): Promise<import("./types").Error | import("./actions/get-payment-status").GetPaymentStatusReturn>;

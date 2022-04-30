@@ -3,6 +3,12 @@ declare const _default: {
     getCurrencies: ({ apiKey }: {
         apiKey: string;
     }) => Promise<import("../types").Error | import("./get-currencies").GetCurrenciesReturn>;
+    getFullCurrencies: ({ apiKey }: {
+        apiKey: string;
+    }) => Promise<import("../types").Error | import("./get-full-currencies").GetFullCurrenciesReturn>;
+    getAvailableCurrencies: ({ apiKey }: {
+        apiKey: string;
+    }) => Promise<import("../types").Error | import("./get-available-currencies").GetAvailableCurrenciesReturn>;
     getEstimatePrice: ({ apiKey, amount, currency_from, currency_to }: import("./get-estimate-price").GetEstimatePrice) => Promise<import("../types").Error | import("./get-estimate-price").GetEstimatePriceReturn>;
     createPayment: ({ apiKey, price_amount, price_currency, pay_amount, pay_currency, ipn_callback_url, order_id, order_description, purchase_id, payout_address, payout_currency, payout_extra_id, fixed_rate }: import("./create-payment").CreatePayment) => Promise<import("../types").Error | import("./create-payment").CreatePaymentReturn>;
     getPaymentStatus: ({ apiKey, payment_id }: import("./get-payment-status").GetPaymentStatus) => Promise<import("../types").Error | import("./get-payment-status").GetPaymentStatusReturn>;
