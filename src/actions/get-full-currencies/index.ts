@@ -23,11 +23,11 @@ export interface FullCurrency {
   network_precision: number | null
 }
 
-const getCurrencies = async ({ apiKey }: { apiKey: string }): Promise<GetFullCurrenciesReturn | Error> => {
+const getFullCurrencies = async ({ apiKey }: { apiKey: string }): Promise<GetFullCurrenciesReturn | Error> => {
   const API = new ConnectApi({ apiKey })
 
   const { data } = await API.get('/full-currencies')
   return data
 }
 
-export default getCurrencies
+export default getFullCurrencies
