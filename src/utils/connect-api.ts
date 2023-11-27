@@ -4,11 +4,13 @@ class ConnectApi {
   apiKey: string
   api: AxiosInstance
 
-  constructor({ apiKey }: { apiKey: string }) {
+  constructor({ apiKey, timeout }: { apiKey: string, timeout?: number }) {
     this.apiKey = apiKey
+    timeout = timeout ?? 10000;
     this.api = axios.create({
       baseURL: 'https://api.nowpayments.io/v1/',
-      timeout: 10000,
+      timeout: timeout,
+      signal: AbortSignal.timeout(timeout),
       headers: { 'x-api-key': apiKey },
       validateStatus: () => true
     })
